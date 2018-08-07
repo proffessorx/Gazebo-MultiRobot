@@ -13,7 +13,7 @@
     <pose>0 0 0.6 0 0 0</pose>
 
     <inertial>
-      <mass value="55.0"/>
+      <mass value="20.0"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia
           ixx="2.156916" ixy="0" ixz="0"
@@ -157,12 +157,12 @@
     </visual>
     <inertial>
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
-      <mass value="8"/>
+      <mass value="10"/>
       <cylinder_inertia m="10" r="0.1" h="0.06"/>
       <inertia
-        ixx="1.0" ixy="0.0" ixz="0.0"
-        iyy="1.0" iyz="0.0"
-        izz="1.0"/>
+        ixx="0.028" ixy="0.0" ixz="0.0"
+        iyy="0.028" iyz="0.0"
+        izz="0.05"/>
     </inertial>
   </link>
 
@@ -182,12 +182,12 @@
     </visual>
     <inertial>
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
-      <mass value="8"/>
+      <mass value="10"/>
       <cylinder_inertia m="10" r="0.1" h="0.06"/>
       <inertia
-        ixx="1.0" ixy="0.0" ixz="0.0"
-        iyy="1.0" iyz="0.0"
-        izz="1.0"/>
+        ixx="0.028" ixy="0.0" ixz="0.0"
+        iyy="0.028" iyz="0.0"
+        izz="0.05"/>
     </inertial>
   </link>
 
