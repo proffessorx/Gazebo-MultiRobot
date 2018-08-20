@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+<!-- Select which Robots to Spawn [mir/robotino] -->
+  <arg name="robot_type1" default="mir" />
+  <arg name="robot_type2" default="mir" />
+  <arg name="robot_type3" default="mir" />
+  <arg name="robot_type4" default="mir" />
+  <arg name="robot_type5" default="mir" />
+  <arg name="robot_type6" default="robotino" />
+  <arg name="robot_type7" default="robotino" />
+  <arg name="robot_type8" default="robotino" />
+  <arg name="robot_type9" default="robotino" />
+  <arg name="robot_type10" default="robotino" />
+
+
+  <!-- No namespace here as we will share this description. Access with slash at the beginning -->
+
+
+  <param name="robot_description_mir"
+    command="$(find xacro)/xacro.py $(find mybot_description)/urdf/mybot.xacro" />
+  <param name="robot_description_robotino"
+    command="$(find xacro)/xacro.py $(find robotino_description)/urdf/robotino.urdf.xacro" />
+
+
+  <!-- BEGIN ROBOT 1-->
+  <group ns="robot1" if="$(eval robot_type1 == 'mir')" >
+    <param name="tf_prefix" value="robot1_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type1)/robot.launch" >
+      <arg name="init_pose" value="-x 5 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot1" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 2-->
+  <group ns="robot2">
+    <param name="tf_prefix" value="robot2_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type2)/robot.launch" >
+      <arg name="init_pose" value="-x 3 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot2" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 3-->
+  <group ns="robot3">
+    <param name="tf_prefix" value="robot3_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type3)/robot.launch" >
+      <arg name="init_pose" value="-x 1 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot3" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 4-->
+  <group ns="robot4">
+    <param name="tf_prefix" value="robot4_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type4)/robot.launch" >
+      <arg name="init_pose" value="-x -1 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot4" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 5-->
+  <group ns="robot5">
+    <param name="tf_prefix" value="robot5_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type5)/robot.launch" >
+      <arg name="init_pose" value="-x -3 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot5" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 6-->
+  <group ns="robot6">
+    <param name="tf_prefix" value="robot6_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type6)/robot.launch" >
+      <arg name="init_pose" value="-x -5 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot6" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 7-->
+  <group ns="robot7">
+    <param name="tf_prefix" value="robot7_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type7)/robot.launch" >
+      <arg name="init_pose" value="-x -7 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot7" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 8-->
+  <group ns="robot8">
+    <param name="tf_prefix" value="robot8_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type8)/robot.launch" >
+      <arg name="init_pose" value="-x -9 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot8" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 9-->
+  <group ns="robot9">
+    <param name="tf_prefix" value="robot9_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type9)/robot.launch" >
+      <arg name="init_pose" value="-x -11 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot9" />
+    </include>
+  </group>
+
+  <!-- BEGIN ROBOT 10-->
+  <group ns="robot10">
+    <param name="tf_prefix" value="robot10_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type10)/robot.launch" >
+      <arg name="init_pose" value="-x -13 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot10" />
+    </include>
+  </group>
+
+
+
+</launch>
