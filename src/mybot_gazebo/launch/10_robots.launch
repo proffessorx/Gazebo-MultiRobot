@@ -23,7 +23,7 @@
     command="$(find xacro)/xacro.py $(find robotino_description)/urdf/robotino.urdf.xacro" />
 
 
-  <!-- BEGIN ROBOT 1-->
+  <!-- BEGIN ROBOT 1 -->
   <group ns="robot1" if="$(eval robot_type1 == 'mir')" >
     <param name="tf_prefix" value="robot1_tf" />
     <include file="$(find mybot_gazebo)/launch/$(arg robot_type1)/robot.launch" >
@@ -31,9 +31,9 @@
       <arg name="robot_name"  value="Robot1" />
     </include>
   </group>
+ 
 
-
-  <!-- BEGIN ROBOT 2-->
+  <!-- BEGIN ROBOT 2 -->
   <group ns="robot2">
     <param name="tf_prefix" value="robot2_tf" />
     <include file="$(find mybot_gazebo)/launch/$(arg robot_type2)/robot.launch" >
@@ -43,7 +43,7 @@
   </group>
 
 
-  <!-- BEGIN ROBOT 3-->
+  <!-- BEGIN ROBOT 3 -->
   <group ns="robot3">
     <param name="tf_prefix" value="robot3_tf" />
     <include file="$(find mybot_gazebo)/launch/$(arg robot_type3)/robot.launch" >
@@ -103,7 +103,7 @@
   </group>
 
 
-  <!-- BEGIN ROBOT 9-->
+  <!-- BEGIN ROBOT 9 -->
   <group ns="robot9">
     <param name="tf_prefix" value="robot9_tf" />
     <include file="$(find mybot_gazebo)/launch/$(arg robot_type9)/robot.launch" >
@@ -112,7 +112,8 @@
     </include>
   </group>
 
-  <!-- BEGIN ROBOT 10-->
+
+  <!-- BEGIN ROBOT 10 -->
   <group ns="robot10">
     <param name="tf_prefix" value="robot10_tf" />
     <include file="$(find mybot_gazebo)/launch/$(arg robot_type10)/robot.launch" >
@@ -120,7 +121,6 @@
       <arg name="robot_name"  value="Robot10" />
     </include>
   </group>
-
 
 
 </launch>
