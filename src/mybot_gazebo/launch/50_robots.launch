@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+<!-- Select which Robots to Spawn [mir/robotino] -->
+  <arg name="robot_type1" default="mir" />
+  <arg name="robot_type2" default="mir" />
+  <arg name="robot_type3" default="mir" />
+  <arg name="robot_type4" default="mir" />
+  <arg name="robot_type5" default="mir" />
+  <arg name="robot_type6" default="robotino" />
+  <arg name="robot_type7" default="robotino" />
+  <arg name="robot_type8" default="robotino" />
+  <arg name="robot_type9" default="robotino" />
+  <arg name="robot_type10" default="robotino" />
+
+  <arg name="robot_type11" default="mir" />
+  <arg name="robot_type12" default="mir" />
+  <arg name="robot_type13" default="mir" />
+  <arg name="robot_type14" default="mir" />
+  <arg name="robot_type15" default="mir" />
+  <arg name="robot_type16" default="robotino" />
+  <arg name="robot_type17" default="robotino" />
+  <arg name="robot_type18" default="robotino" />
+  <arg name="robot_type19" default="robotino" />
+  <arg name="robot_type20" default="robotino" />
+
+  <arg name="robot_type21" default="mir" />
+  <arg name="robot_type22" default="mir" />
+  <arg name="robot_type23" default="mir" />
+  <arg name="robot_type24" default="mir" />
+  <arg name="robot_type25" default="mir" />
+  <arg name="robot_type26" default="robotino" />
+  <arg name="robot_type27" default="robotino" />
+  <arg name="robot_type28" default="robotino" />
+  <arg name="robot_type29" default="robotino" />
+  <arg name="robot_type30" default="robotino" />
+
+  <arg name="robot_type31" default="mir" />
+  <arg name="robot_type32" default="mir" />
+  <arg name="robot_type33" default="mir" />
+  <arg name="robot_type34" default="mir" />
+  <arg name="robot_type35" default="mir" />
+  <arg name="robot_type36" default="robotino" />
+  <arg name="robot_type37" default="robotino" />
+  <arg name="robot_type38" default="robotino" />
+  <arg name="robot_type39" default="robotino" />
+  <arg name="robot_type40" default="robotino" />
+
+  <arg name="robot_type41" default="mir" />
+  <arg name="robot_type42" default="mir" />
+  <arg name="robot_type43" default="mir" />
+  <arg name="robot_type44" default="mir" />
+  <arg name="robot_type45" default="mir" />
+  <arg name="robot_type46" default="robotino" />
+  <arg name="robot_type47" default="robotino" />
+  <arg name="robot_type48" default="robotino" />
+  <arg name="robot_type49" default="robotino" />
+  <arg name="robot_type50" default="robotino" />
+
+
+  <!-- No namespace here as we will share this description. Access with slash at the beginning -->
+
+
+  <param name="robot_description_mir"
+    command="$(find xacro)/xacro.py $(find mybot_description)/urdf/mybot.xacro" />
+  <param name="robot_description_robotino"
+    command="$(find xacro)/xacro.py $(find robotino_description)/urdf/robotino.urdf.xacro" />
+
+
+  <!-- BEGIN ROBOT 1 -->
+  <group ns="robot1" if="$(eval robot_type1 == 'mir')" >
+    <param name="tf_prefix" value="robot1_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type1)/robot.launch" >
+      <arg name="init_pose" value="-x 5 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot1" />
+    </include>
+  </group>
+ 
+
+  <!-- BEGIN ROBOT 2 -->
+  <group ns="robot2">
+    <param name="tf_prefix" value="robot2_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type2)/robot.launch" >
+      <arg name="init_pose" value="-x 3 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot2" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 3 -->
+  <group ns="robot3">
+    <param name="tf_prefix" value="robot3_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type3)/robot.launch" >
+      <arg name="init_pose" value="-x 1 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot3" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 4-->
+  <group ns="robot4">
+    <param name="tf_prefix" value="robot4_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type4)/robot.launch" >
+      <arg name="init_pose" value="-x -1 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot4" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 5-->
+  <group ns="robot5">
+    <param name="tf_prefix" value="robot5_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type5)/robot.launch" >
+      <arg name="init_pose" value="-x -3 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot5" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 6-->
+  <group ns="robot6">
+    <param name="tf_prefix" value="robot6_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type6)/robot.launch" >
+      <arg name="init_pose" value="-x -5 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot6" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 7-->
+  <group ns="robot7">
+    <param name="tf_prefix" value="robot7_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type7)/robot.launch" >
+      <arg name="init_pose" value="-x -7 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot7" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 8-->
+  <group ns="robot8">
+    <param name="tf_prefix" value="robot8_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type8)/robot.launch" >
+      <arg name="init_pose" value="-x -9 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot8" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 9 -->
+  <group ns="robot9">
+    <param name="tf_prefix" value="robot9_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type9)/robot.launch" >
+      <arg name="init_pose" value="-x -11 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot9" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 10 -->
+  <group ns="robot10">
+    <param name="tf_prefix" value="robot10_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type10)/robot.launch" >
+      <arg name="init_pose" value="-x -13 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot10" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 11 -->
+  <group ns="robot11" if="$(eval robot_type11 == 'mir')" >
+    <param name="tf_prefix" value="robot11_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type11)/robot.launch" >
+      <arg name="init_pose" value="-x 5 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot11" />
+    </include>
+  </group>
+ 
+
+  <!-- BEGIN ROBOT 12 -->
+  <group ns="robot12">
+    <param name="tf_prefix" value="robot12_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type12)/robot.launch" >
+      <arg name="init_pose" value="-x 3 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot12" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 13 -->
+  <group ns="robot13">
+    <param name="tf_prefix" value="robot13_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type13)/robot.launch" >
+      <arg name="init_pose" value="-x 1 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot13" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 14-->
+  <group ns="robot14">
+    <param name="tf_prefix" value="robot14_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type14)/robot.launch" >
+      <arg name="init_pose" value="-x -1 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot14" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 15-->
+  <group ns="robot15">
+    <param name="tf_prefix" value="robot15_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type15)/robot.launch" >
+      <arg name="init_pose" value="-x -3 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot15" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 16-->
+  <group ns="robot16">
+    <param name="tf_prefix" value="robot16_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type16)/robot.launch" >
+      <arg name="init_pose" value="-x -5 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot16" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 17-->
+  <group ns="robot17">
+    <param name="tf_prefix" value="robot17_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type17)/robot.launch" >
+      <arg name="init_pose" value="-x -7 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot17" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 18-->
+  <group ns="robot18">
+    <param name="tf_prefix" value="robot18_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type18)/robot.launch" >
+      <arg name="init_pose" value="-x -9 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot18" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 19 -->
+  <group ns="robot19">
+    <param name="tf_prefix" value="robot19_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type19)/robot.launch" >
+      <arg name="init_pose" value="-x -11 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot19" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 20 -->
+  <group ns="robot20">
+    <param name="tf_prefix" value="robot20_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type20)/robot.launch" >
+      <arg name="init_pose" value="-x -13 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot20" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 21 -->
+  <group ns="robot21" if="$(eval robot_type21 == 'mir')" >
+    <param name="tf_prefix" value="robot21_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type21)/robot.launch" >
+      <arg name="init_pose" value="-x 5 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot21" />
+    </include>
+  </group>
+ 
+
+  <!-- BEGIN ROBOT 22 -->
+  <group ns="robot22">
+    <param name="tf_prefix" value="robot22_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type22)/robot.launch" >
+      <arg name="init_pose" value="-x 3 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot22" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 23 -->
+  <group ns="robot23">
+    <param name="tf_prefix" value="robot23_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type23)/robot.launch" >
+      <arg name="init_pose" value="-x 1 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot23" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 24-->
+  <group ns="robot24">
+    <param name="tf_prefix" value="robot24_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type24)/robot.launch" >
+      <arg name="init_pose" value="-x -1 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot24" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 25-->
+  <group ns="robot25">
+    <param name="tf_prefix" value="robot25_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type25)/robot.launch" >
+      <arg name="init_pose" value="-x -3 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot25" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 26-->
+  <group ns="robot26">
+    <param name="tf_prefix" value="robot26_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type26)/robot.launch" >
+      <arg name="init_pose" value="-x -5 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot26" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 27-->
+  <group ns="robot27">
+    <param name="tf_prefix" value="robot27_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type27)/robot.launch" >
+      <arg name="init_pose" value="-x -7 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot27" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 28-->
+  <group ns="robot28">
+    <param name="tf_prefix" value="robot28_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type28)/robot.launch" >
+      <arg name="init_pose" value="-x -9 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot28" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 29 -->
+  <group ns="robot29">
+    <param name="tf_prefix" value="robot29_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type29)/robot.launch" >
+      <arg name="init_pose" value="-x -11 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot29" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 30 -->
+  <group ns="robot30">
+    <param name="tf_prefix" value="robot30_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type30)/robot.launch" >
+      <arg name="init_pose" value="-x -13 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot30" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 31 -->
+  <group ns="robot31" if="$(eval robot_type31 == 'mir')" >
+    <param name="tf_prefix" value="robot31_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type31)/robot.launch" >
+      <arg name="init_pose" value="-x 5 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot31" />
+    </include>
+  </group>
+ 
+
+  <!-- BEGIN ROBOT 32 -->
+  <group ns="robot32">
+    <param name="tf_prefix" value="robot32_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type32)/robot.launch" >
+      <arg name="init_pose" value="-x 3 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot32" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 33 -->
+  <group ns="robot33">
+    <param name="tf_prefix" value="robot33_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type33)/robot.launch" >
+      <arg name="init_pose" value="-x 1 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot33" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 34-->
+  <group ns="robot34">
+    <param name="tf_prefix" value="robot34_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type34)/robot.launch" >
+      <arg name="init_pose" value="-x -1 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot34" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 35-->
+  <group ns="robot35">
+    <param name="tf_prefix" value="robot35_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type35)/robot.launch" >
+      <arg name="init_pose" value="-x -3 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot35" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 36-->
+  <group ns="robot36">
+    <param name="tf_prefix" value="robot36_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type36)/robot.launch" >
+      <arg name="init_pose" value="-x -5 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot36" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 37-->
+  <group ns="robot37">
+    <param name="tf_prefix" value="robot37_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type37)/robot.launch" >
+      <arg name="init_pose" value="-x -7 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot37" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 38-->
+  <group ns="robot38">
+    <param name="tf_prefix" value="robot38_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type38)/robot.launch" >
+      <arg name="init_pose" value="-x -9 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot38" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 39 -->
+  <group ns="robot39">
+    <param name="tf_prefix" value="robot39_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type39)/robot.launch" >
+      <arg name="init_pose" value="-x -11 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot39" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 40 -->
+  <group ns="robot40">
+    <param name="tf_prefix" value="robot40_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type40)/robot.launch" >
+      <arg name="init_pose" value="-x -13 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot40" />
+    </include>
+  </group>
+
+
+
+  <!-- BEGIN ROBOT 41 -->
+  <group ns="robot41" if="$(eval robot_type41 == 'mir')" >
+    <param name="tf_prefix" value="robot41_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type41)/robot.launch" >
+      <arg name="init_pose" value="-x 5 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot41" />
+    </include>
+  </group>
+ 
+
+  <!-- BEGIN ROBOT 42 -->
+  <group ns="robot42">
+    <param name="tf_prefix" value="robot42_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type42)/robot.launch" >
+      <arg name="init_pose" value="-x 3 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot42" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 43 -->
+  <group ns="robot43">
+    <param name="tf_prefix" value="robot43_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type43)/robot.launch" >
+      <arg name="init_pose" value="-x 1 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot43" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 44-->
+  <group ns="robot44">
+    <param name="tf_prefix" value="robot44_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type44)/robot.launch" >
+      <arg name="init_pose" value="-x -1 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot44" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 45-->
+  <group ns="robot45">
+    <param name="tf_prefix" value="robot45_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type45)/robot.launch" >
+      <arg name="init_pose" value="-x -3 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot45" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 46-->
+  <group ns="robot46">
+    <param name="tf_prefix" value="robot46_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type46)/robot.launch" >
+      <arg name="init_pose" value="-x -5 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot46" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 47-->
+  <group ns="robot47">
+    <param name="tf_prefix" value="robot47_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type47)/robot.launch" >
+      <arg name="init_pose" value="-x -7 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot47" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 48-->
+  <group ns="robot48">
+    <param name="tf_prefix" value="robot48_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type48)/robot.launch" >
+      <arg name="init_pose" value="-x -9 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot48" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 49 -->
+  <group ns="robot49">
+    <param name="tf_prefix" value="robot49_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type49)/robot.launch" >
+      <arg name="init_pose" value="-x -11 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot49" />
+    </include>
+  </group>
+
+
+  <!-- BEGIN ROBOT 50 -->
+  <group ns="robot50">
+    <param name="tf_prefix" value="robot50_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type50)/robot.launch" >
+      <arg name="init_pose" value="-x -13 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot50" />
+    </include>
+  </group>
+
+
+</launch>

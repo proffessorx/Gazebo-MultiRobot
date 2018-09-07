@@ -18,6 +18,6 @@
   </include>
 
    <!-- include our robots -->
-  <include file="$(find mybot_gazebo)/launch/10_robots.launch"/>
+  <include file="$(find mybot_gazebo)/launch/50_robots.launch"/>
 
 </launch>
