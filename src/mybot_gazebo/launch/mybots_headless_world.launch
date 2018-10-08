@@ -17,7 +17,7 @@
     <arg name="debug" value="$(arg debug)"/>
   </include>
 
-   <!-- include our robots 
-  <include file="$(find mybot_gazebo)/launch/50_robots.launch"/>-->
+   <!-- include our robots -->
+  <include file="$(find mybot_gazebo)/launch/10_robots.launch"/>
 
 </launch>
