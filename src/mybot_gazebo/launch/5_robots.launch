@@ -21,6 +21,7 @@
   <!-- BEGIN ROBOT 1-->
   <group ns="robot1" if="$(eval robot_type1 == 'mir')" >
     <param name="tf_prefix" value="robot1_tf" />
+    <node name="goal_publish" pkg="multirobotglobalplanner" type="goal_publish_1.py" output="screen" />
     <include file="$(find mybot_gazebo)/launch/$(arg robot_type1)/robot.launch" >
       <arg name="init_pose" value="-x 6 -y 1 -z 0" />
       <arg name="robot_name"  value="Robot1" />
@@ -32,6 +33,7 @@
   <!-- BEGIN ROBOT 2-->
   <group ns="robot2">
     <param name="tf_prefix" value="robot2_tf" />
+    <node name="goal_publish" pkg="multirobotglobalplanner" type="goal_publish_2.py" output="screen" />
     <include file="$(find mybot_gazebo)/launch/$(arg robot_type2)/robot.launch" >
       <arg name="init_pose" value="-x 3 -y 1 -z 0" />
       <arg name="robot_name"  value="Robot2" />
