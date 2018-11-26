@@ -12,8 +12,10 @@
      respawn="false" output="screen" />
 
 
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node> 
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
+  </node> 
   <!-- start robot state publisher -->
+
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen" >
     <param name="publish_frequency" type="double" value="50.0" />
   </node>

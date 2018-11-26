@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+<!-- Select which Robots to Spawn [mir/robotino] -->
+  <arg name="robot_type1" default="mir" />
+  <arg name="robot_type2" default="mir" />
+  <arg name="robot_type3" default="robotino" />
+
+
+  <!-- No namespace here as we will share this description. Access with slash at the beginning -->
+  <param name="robot_description_mir"
+    command="$(find xacro)/xacro.py $(find mybot_description)/urdf/mybot.xacro" />
+<!--
+  <param name="robot_description_robotino"
+    command="$(find xacro)/xacro.py $(find robotino_description)/urdf/robotino.urdf.xacro" />
+-->
+
+  <!-- BEGIN ROBOT 1--> <!--
+  <group ns="robot_0" if="$(eval robot_type1 == 'mir')" >
+    <param name="tf_prefix" value="robot_0" />
+-->
+    <node name="goal_publish" pkg="multirobotglobalplanner" type="goal_publish.py" output="screen" args="robot_0 robot_5" />
+<!--
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type1)/robot.launch" >
+      <arg name="init_pose" value="-x 1 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot1" />
+    </include>
+
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type1)/navigation_config_stage.launch">
+     <arg name="robot" default="robot_0"/>
+    </include>
+
+  </group>
+-->
+
+  <!-- BEGIN ROBOT 2--> <!--
+  <group ns="robot_1">
+    <param name="tf_prefix" value="robot_1" />
+
+    <node name="goal_publish" pkg="multirobotglobalplanner" type="goal_publish.py" output="screen" args="robot_1" />
+
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type2)/robot.launch" >
+      <arg name="init_pose" value="-x -1 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot2" />
+    </include>
+
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type1)/navigation_config_stage.launch">
+     <arg name="robot" default="robot_1"/>
+    </include>
+  </group>
+-->
+
+  <!-- BEGIN ROBOT 3--> <!--
+  <group ns="robot3">
+    <param name="tf_prefix" value="robot3_tf" />
+    <include file="$(find mybot_gazebo)/launch/$(arg robot_type3)/robot.launch" >
+      <arg name="init_pose" value="-x -3 -y 1 -z 0" />
+      <arg name="robot_name"  value="Robot3" />
+    </include>
+  </group>
+-->
+
+</launch>

@@ -1,0 +1,7 @@
+base_local_planner: "ipa_eband_planner/IPAEBandPlannerROS"
+base_global_planner: "multi_global_planner/MultiGlobalPlanner"
+controller_frequency: 20.0
+planner_patience: 5
+shutdown_costmaps: true
+planner_frequency: 0.0
+

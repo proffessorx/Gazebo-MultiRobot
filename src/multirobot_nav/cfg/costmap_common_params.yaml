@@ -1,0 +1,11 @@
+
+footprint: [ [-0.454, -0.320], [-0.454, 0.320], [0.506, 0.320], [0.506, -0.320] ]
+
+# footprint: [ [-0.445, -0.290], [-0.445, 0.290], [0.445, 0.290], [0.445, -0.290] ]
+
+
+obstacle_range: 2.5
+raytrace_range: 3.0
+#robot_radius: ir_of_robot
+inflation_radius: 0.55
+

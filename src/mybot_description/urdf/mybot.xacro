@@ -9,7 +9,7 @@
   <xacro:include filename="$(find mybot_description)/urdf/macros.xacro" />
 
 
-  <link name='chassis'>
+  <link name='base_link'>
     <pose>0 0 0.6 0 0 0</pose>
 
     <inertial>
@@ -217,7 +217,7 @@
   <joint type="continuous" name="left_wheel_hinge">
     <origin xyz="0 0.25 -0.2" rpy="0 0 0"/>
     <child link="left_wheel"/>
-    <parent link="chassis"/>
+    <parent link="base_link"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
     <limit effort="100" velocity="100"/>
     <joint_properties damping="0.0" friction="0.0"/>
@@ -226,7 +226,7 @@
   <joint type="continuous" name="right_wheel_hinge">
     <origin xyz="0 -0.25 -0.2" rpy="0 0 0"/>
     <child link="right_wheel"/>
-    <parent link="chassis"/>
+    <parent link="base_link"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
     <limit effort="100" velocity="100"/>
     <joint_properties damping="0.0" friction="0.0"/>

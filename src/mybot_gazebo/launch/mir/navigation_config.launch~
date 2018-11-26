@@ -25,12 +25,12 @@
   </node> 
   <!--- Run move_base -->
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-        <rosparam file="$(find multirobot_nav)/cfg/costmap_common_params.yaml" command="load" ns="global_costmap" />
-        <rosparam file="$(find multirobot_nav)/cfg/costmap_common_params.yaml" command="load" ns="local_costmap" />
-        <rosparam file="$(find multirobot_nav)/cfg/local_costmap_params.yaml" command="load" />
-        <rosparam file="$(find multirobot_nav)/cfg/global_costmap_params.yaml" command="load" />
-        <rosparam file="$(find multirobot_nav)/cfg/base_local_planner_params.yaml" command="load" />
-	<rosparam file="$(find multirobot_nav)/cfg/move_base_params.yaml" command="load" />  <!--
+        <rosparam file="$(find mir_nav2d)/cfg/costmap_common_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find mir_nav2d)/cfg/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find mir_nav2d)/cfg/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find mir_nav2d)/cfg/global_costmap_params.yaml" command="load" />
+        <rosparam file="$(find mir_nav2d)/cfg/base_local_planner_params.yaml" command="load" />
+		  <rosparam file="$(find mir_nav2d)/cfg/move_base_params.yaml" command="load" />  <!--
 	<param name="global_costmap/robot_base_frame" value="base_link"/>	
 	<param name="local_costmap/global_frame" value="odom"/>
 	<param name="local_costmap/robot_base_frame" value="base_link"/> -->
