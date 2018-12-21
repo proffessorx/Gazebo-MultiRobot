@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <arg name="rob_1"/>
+  <arg name="rob_2"/>
+  <!-- Map server -->
+  <arg name="map_file" default="$(find mybot_gazebo)/maps/robotino3/world_multiplanner.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <arg name="initial_pose_x" default="0.0"/> <!-- Use 17.0 for willow's map in simulation -->
+  <arg name="initial_pose_y" default="0.0"/> <!-- Use 17.0 for willow's map in simulation -->
+  <arg name="initial_pose_a" default="0.0"/>
+
+  <!-- Global Rob ID -->
+  <node name="global_robot_id" pkg="multi_robot_action_move" type="robot_id_pub.py" output="screen" args="$(arg rob_1) $(arg rob_2)" />
+
+</launch>
